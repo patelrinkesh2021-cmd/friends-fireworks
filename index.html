@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Friends Fireworks · Surat</title>
+<meta name="theme-color" content="#b42318">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23b42318'/%3E%3Cpath d='M32 10v14M32 40v14M10 32h14M40 32h14M17 17l10 10M37 37l10 10M47 17L37 27M27 37L17 47' stroke='%23f6c667' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#faf7f3;--card:#fff;--ink:#1f1a16;--mute:#7a6d63;--line:#e8dfd5;--red:#b42318;--soft:#f3ece4;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#161210;--card:#201a17;--ink:#f4ece6;--mute:#a39489;--line:#352d28;--red:#ff7a6b;--soft:#2a221e;color-scheme:dark}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(ellipse 80% 50% at 50% 0,color-mix(in srgb,var(--red) 11%,transparent),transparent),var(--bg);color:var(--ink);font:16px/1.5 system-ui,"Noto Sans Gujarati","Nirmala UI","Shruti",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:24px 18px 20px}
+main{width:100%;max-width:460px;text-align:center;margin:auto 0;padding-top:20px}
+.logo{width:84px;height:84px;margin:0 auto 18px;border-radius:26px;background:linear-gradient(145deg,#d92d20,#8f1a10);display:grid;place-items:center;box-shadow:0 10px 28px color-mix(in srgb,var(--red) 35%,transparent)}
+.logo svg{width:52px;height:52px}
+h1{margin:0;line-height:1;font-weight:800}
+h1 .a{display:block;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(40px,12vw,54px);letter-spacing:-.02em}
+h1 .b{display:block;margin-top:8px;font-size:clamp(14px,4vw,17px);letter-spacing:.5em;padding-left:.5em;color:var(--red);font-weight:800}
+.gu{display:block;color:var(--mute);font-size:.92em;margin-top:2px}
+h1 .g{font-style:normal;letter-spacing:0;padding-left:0}
+h1 .a.g{margin-top:14px;font-size:clamp(34px,10vw,46px)}
+h1 .b.g{font-size:clamp(17px,5vw,21px)}
+.tag{display:flex;align-items:center;justify-content:center;gap:12px;line-height:1.4;color:var(--mute);font-size:13px;margin:16px 0 26px;letter-spacing:.04em}
+.tag:before,.tag:after{content:"";width:28px;height:1px;background:var(--line)}
+.sub{color:var(--mute);margin:0 0 12px;font-size:14px;text-align:left;padding-left:4px}
+footer{width:100%;max-width:460px;text-align:center;border-top:1px solid var(--line);padding-top:16px;margin-top:28px;color:var(--mute);font-size:13px;line-height:1.6}
+footer address{font-style:normal}
+footer .row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+footer a{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600}
+footer a.call{background:var(--red);border-color:var(--red);color:#fff}
+.box{position:relative;text-align:left}
+.box svg{position:absolute;left:16px;top:27px;translate:0 -50%;width:19px;height:19px;stroke:var(--mute);fill:none;stroke-width:2;pointer-events:none}
+input{width:100%;font:inherit;font-size:18px;padding:16px 48px 16px 46px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);outline:none;box-shadow:0 4px 18px #0000000d}
+input:focus{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 18%,transparent)}
+.x{position:absolute;right:6px;top:6px;border:0;background:none;color:var(--mute);font-size:24px;width:42px;height:42px;cursor:pointer;display:none}
+.x.on{display:block}
+.sug{position:absolute;left:0;right:0;top:62px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px #00000018;overflow:hidden;display:none;z-index:3}
+.sug.on{display:block}
+.sug button{display:flex;gap:10px;align-items:center;width:100%;border:0;border-top:1px solid var(--line);background:none;color:inherit;font:inherit;padding:12px 16px;text-align:left;cursor:pointer}
+.sug button:first-child{border-top:0}
+.sug button.act,.sug button:hover{background:var(--soft)}
+.sug small{color:var(--mute);font-size:12px;letter-spacing:.05em;flex:none;width:58px}
+.sug span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px}
+.sug em{font-style:normal;font-weight:700;color:var(--red);font-size:14px}
+.sug .none{padding:16px;color:var(--mute);font-size:14px;text-align:center}
+.hint{color:var(--mute);font-size:13px;margin-top:16px;line-height:1.5}
+dialog{border:0;padding:0;background:transparent;width:calc(100% - 28px);max-width:480px;color:var(--ink);overflow:visible}
+dialog::backdrop{background:#000a;backdrop-filter:blur(3px)}
+.card{background:var(--card);border-radius:24px;padding:22px 20px 20px;max-height:92vh;overflow:auto;animation:up .22s ease-out}
+@keyframes up{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.id{color:var(--mute);font-size:12px;letter-spacing:.1em;font-weight:700}
+.nav{display:flex;align-items:center;gap:6px;color:var(--mute);font-size:13px}
+.nav button,.close{border:0;background:var(--soft);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:17px;cursor:pointer}
+h2{margin:0;font-size:24px;line-height:1.2;overflow-wrap:anywhere}
+.price{font-size:38px;font-weight:800;color:var(--red);margin:10px 0 4px;letter-spacing:-.02em}
+.lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:700;margin:18px 0 6px}
+.desc{margin:0}
+.slot{border:1.5px dashed var(--line);border-radius:14px;background:var(--soft);min-height:150px;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:14px;overflow:hidden}
+.slot img,.slot video{width:100%;max-height:300px;object-fit:contain;display:block}
+.acts{display:flex;gap:8px;margin-top:20px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px;font:inherit;font-weight:650;cursor:pointer;background:var(--soft);color:var(--ink)}
+.btn.pri{background:var(--red);color:#fff}
+.toast{position:fixed;left:50%;translate:-50% 0;top:20px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:20}
+.toast.on{opacity:1}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main,footer{position:relative;z-index:1}
+body.hascart{padding-bottom:84px}
+.step{display:inline-flex;align-items:center;background:var(--soft);border-radius:12px}
+.step button{border:0;background:none;color:var(--ink);font-size:22px;width:44px;height:46px;cursor:pointer;border-radius:12px}
+.step span{min-width:30px;text-align:center;font-weight:800;font-size:18px}
+.buy{display:flex;gap:10px;align-items:stretch;margin-top:20px}
+.buy .btn{line-height:1.25}
+.buy+.acts{margin-top:10px}
+.pill{position:fixed;left:50%;translate:-50% 0;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;background:var(--red);color:#fff;border:0;border-radius:999px;padding:13px 22px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 10px 28px #0004;display:none;white-space:nowrap;animation:up .25s ease-out}
+.pill.on{display:block}
+.li{display:flex;align-items:center;gap:10px;padding:12px 0;border-top:1px solid var(--line)}
+.lt{flex:1;min-width:0}.lt b{display:block;font-size:15px;overflow-wrap:anywhere}.lt small{color:var(--mute);font-size:12px}
+.lp{font-weight:700;min-width:74px;text-align:right}
+.step.sm button{width:34px;height:36px;font-size:19px}.step.sm span{min-width:24px;font-size:16px}
+.tot{display:flex;justify-content:space-between;font-size:22px;font-weight:800;margin:14px 0 2px;border-top:2px solid var(--line);padding-top:14px}
+.tot span:last-child{color:var(--red)}
+.lempty{padding:26px 0;text-align:center;color:var(--mute)}
+.link{background:none;border:0;color:var(--mute);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;margin:12px auto 0;display:block}
+.pvw{margin-top:14px;position:relative}
+.snd{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;border:0;background:#ffffff22;color:#fff;font-size:17px;cursor:pointer;backdrop-filter:blur(4px)}
+.pvw canvas{display:block;width:100%;height:160px;border-radius:14px;background:radial-gradient(ellipse at 50% 110%,#35204a,#0b0a14 70%);cursor:pointer;touch-action:manipulation}
+.pvw small{display:block;text-align:center;color:var(--mute);font-size:12px;margin-top:6px;line-height:1.4}
+#dName,#dPrice{cursor:pointer;-webkit-user-select:none;user-select:none}
+.fx{background-image:radial-gradient(circle at 30% 35%,#fff 0 1px,rgba(255,225,130,.95) 1.5px,transparent 3px),radial-gradient(circle at 65% 60%,#fff 0 1px,rgba(255,225,130,.95) 1.5px,transparent 3px),radial-gradient(circle at 45% 25%,#fff 0 1px,rgba(255,225,130,.95) 1.5px,transparent 3px),radial-gradient(circle at 75% 70%,#fff 0 1px,rgba(255,225,130,.95) 1.5px,transparent 3px),radial-gradient(circle at 20% 75%,#fff 0 1px,rgba(255,225,130,.95) 1.5px,transparent 3px),linear-gradient(105deg,var(--red) 0%,#ff7a1a 30%,#ffd66b 50%,#ff7a1a 70%,var(--red) 100%);background-size:13px 11px,17px 15px,19px 23px,23px 17px,29px 21px,260% 100%;background-repeat:repeat,repeat,repeat,repeat,repeat,no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:fx 1s linear 1}
+@keyframes fx{0%{background-position:5px 2px,12px 1px,2px 17px,3px 11px,18px 1px,100% 0;animation-timing-function:steps(1,end)}8%{background-position:8px 3px,1px 2px,13px 13px,2px 7px,2px 17px,91% 0;animation-timing-function:steps(1,end)}17%{background-position:6px 0px,3px 7px,18px 1px,18px 12px,1px 7px,82% 0;animation-timing-function:steps(1,end)}25%{background-position:0px 8px,4px 9px,13px 4px,17px 3px,18px 9px,73% 0;animation-timing-function:steps(1,end)}33%{background-position:8px 10px,5px 3px,18px 18px,20px 6px,11px 3px,64% 0;animation-timing-function:steps(1,end)}42%{background-position:8px 11px,2px 1px,19px 6px,15px 17px,13px 10px,55% 0;animation-timing-function:steps(1,end)}50%{background-position:7px 9px,14px 11px,9px 7px,5px 7px,2px 18px,45% 0;animation-timing-function:steps(1,end)}58%{background-position:4px 8px,15px 10px,14px 9px,19px 2px,3px 16px,36% 0;animation-timing-function:steps(1,end)}67%{background-position:6px 2px,10px 4px,15px 13px,1px 2px,24px 17px,27% 0;animation-timing-function:steps(1,end)}75%{background-position:9px 5px,10px 11px,19px 15px,18px 14px,2px 2px,18% 0;animation-timing-function:steps(1,end)}83%{background-position:4px 7px,2px 1px,9px 20px,18px 14px,9px 12px,9% 0;animation-timing-function:steps(1,end)}92%{background-position:10px 5px,0px 14px,11px 5px,19px 3px,15px 1px,0% 0;animation-timing-function:steps(1,end)}100%{background-position:0 0,0 0,0 0,0 0,0 0,0% 0}}
+.slot .yt{width:100%;aspect-ratio:16/9;border:0;background:#000 center/cover no-repeat;display:grid;place-items:center;cursor:pointer;padding:0}
+.slot .yt span{width:58px;height:58px;border-radius:50%;background:#e62117;color:#fff;font-size:22px;display:grid;place-items:center;padding-left:4px;box-shadow:0 4px 16px #0006}
+.slot iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+#gate{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;place-items:center;padding:24px;text-align:center}
+#gate.on{display:grid}
+#gate .g{max-width:380px}
+#gate h2{margin:6px 0 8px;font-size:22px;line-height:1.3}
+#gate p{color:var(--mute);margin:0 0 20px;line-height:1.5;font-size:15px}
+#gate code{display:block;background:var(--soft);border-radius:10px;padding:12px;font-size:13px;text-align:left;word-break:break-all;user-select:all;color:var(--ink);margin:0 0 12px}
+#gate .btn{display:block;width:100%;margin-top:10px}
+</style></head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+ <div class="logo"><svg viewBox="0 0 64 64" fill="none" stroke="#f6c667" stroke-width="4.5" stroke-linecap="round"><path d="M32 6v15M32 43v15M6 32h15M43 32h15M14 14l11 11M39 39l11 11M50 14L39 25M25 39L14 50"/><circle cx="32" cy="32" r="4" fill="#fff" stroke="none"/></svg></div>
+ <h1><span class="a">Friends</span><span class="b">FIREWORKS</span>
+  <span class="a g" lang="gu">ફ્રેન્ડ્સ</span><span class="b g" lang="gu">ફાયરવર્ક્સ</span></h1>
+ 
+ <div class="tag"><span>Light up every celebration</span></div>
+ <p class="sub">Enter the item ID from the sticker to see its price.<span class="gu" lang="gu">સ્ટિકર પરનો આઈટમ ID લખો અને ભાવ જુઓ.</span></p>
+ <div class="box">
+  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+  <input id="q" type="search" inputmode="search" placeholder="Item ID / આઈટમ ID  (CR0045)" autocomplete="off" autofocus aria-label="Search item ID or name / આઈટમ ID અથવા નામ શોધો">
+  <button class="x" id="x" aria-label="Clear">×</button>
+  <div class="sug" id="sug" role="listbox"></div>
+ </div>
+ <div class="hint" id="hint">Just type the number, like <b>45</b></div>
+</main>
+<footer>
+ <address>D.B. Patel Food Court, 2nd VIP Road, Surat-395007<span class="gu" lang="gu">ડી.બી. પટેલ ફૂડ કોર્ટ, બીજો વીઆઈપી રોડ, સુરત-395007</span></address>
+ <div class="row"><a class="call" href="tel:+919726153334">📞 97261 53334</a><a href="https://www.google.com/maps/search/?api=1&query=D.B.+Patel+Food+Court+2nd+VIP+Road+Surat+395007" target="_blank" rel="noopener">📍 Directions · દિશા</a></div>
+</footer>
+<dialog id="dlg"><div class="card">
+ <div class="top"><span class="id" id="dId"></span>
+  <div class="nav"><button id="prev" aria-label="Previous">‹</button><span id="pos"></span><button id="next" aria-label="Next">›</button><button class="close" id="close" aria-label="Close">×</button></div></div>
+ <h2 id="dName"></h2>
+ <div class="price" id="dPrice"></div>
+ <div class="pvw" id="pvw"><canvas id="pv" aria-label="Fireworks effect preview"></canvas><button class="snd" id="snd" aria-label="Sound on or off · અવાજ ચાલુ/બંધ">🔊</button><small>Illustrative effect · tap to replay<span class="gu" lang="gu">ઉદાહરણ ઇફેક્ટ · ફરી જોવા ટેપ કરો</span></small></div>
+ <div class="lbl">Description · વર્ણન</div><p class="desc" id="dDesc"></p>
+ <div class="lbl">Photo · ફોટો</div><div class="slot" id="dImg"></div>
+ <div class="lbl">Video · વિડિયો</div><div class="slot" id="dVid"></div>
+ <div class="buy"><div class="step"><button id="qm" aria-label="Less">−</button><span id="qn">1</span><button id="qp" aria-label="More">+</button></div><button class="btn pri" id="addBtn"></button></div>
+ <div class="acts"><button class="btn" id="copy">Copy ID<span class="gu" lang="gu">ID કૉપિ</span></button><a class="btn" href="tel:+919726153334" style="text-align:center;text-decoration:none">Call<span class="gu" lang="gu" style="color:inherit;opacity:.7">કૉલ</span></a><button class="btn" id="share">Share<span class="gu" lang="gu" style="color:inherit;opacity:.85">શેર</span></button></div>
+</div></dialog>
+<button class="pill" id="pill"></button>
+<dialog id="ldlg"><div class="card">
+ <div class="top"><span class="id">MY LIST · મારી યાદી</span><button class="close" id="lclose" aria-label="Close">×</button></div>
+ <div id="lItems"></div>
+ <div class="tot"><span>Total · કુલ</span><span id="lTotal"></span></div>
+ <div id="lBtns"><div class="acts"><button class="btn pri" id="wa">Send on WhatsApp<span class="gu" lang="gu" style="color:inherit;opacity:.85">WhatsApp પર મોકલો</span></button><button class="btn" id="lcopy">Copy list<span class="gu" lang="gu">યાદી કૉપિ</span></button></div>
+ <button class="link" id="lclear">Clear list · યાદી ખાલી કરો</button></div>
+</div></dialog>
+<div class="toast" id="toast"></div>
+<div id="gate" class="on" role="alertdialog" aria-live="polite"><div class="g">
+ <div class="logo" style="font-size:40px">📍</div>
+ <h2 id="gT">Loading…</h2><p id="gP"></p>
+ <button class="btn pri" id="gBtn" hidden></button><button class="btn" id="gBtn2" hidden></button>
+</div></div>
+<script>
+/* PRICE LIST: edit prices.csv in Excel (columns: ID, Name, Price, Description, Photo, Video).
+   Can also be a Google Sheet "Publish to web" CSV link. If it can't load, the built-in list below is used. */
+const PRICE_SOURCE="prices.csv";
+/* SHOP LOCATION LOCK: stand at your counter, open  your-site/?setup  and tap the button.
+   Copy the line it shows and paste it here in place of the next line. Keep null to switch the lock off.
+   Format: const SHOP={lat:00.000000,lng:00.000000,radius:60};  (radius in metres) */
+const SHOP=null;
+let INFO={};
+const RAW=[["CR0001","ROLL PARASAKTHI",92.4],["CR0002","RING CAPS SONY",8.09],["CR0003","C.M. PLAIN ASOK",3465.0],["CR0004","C.M. PLAIN TIM TIM",462.0],["CR0005","C.M. PLAIN POOJA-MAMTA SRI RAM",554.4],["CR0006","C.M. COLOUR GINNY SRI RAM-ECO",477.4],["CR0007","C.M. COLOUR SRI RAM-PEARL-ECO",562.1],["CR0008","C.M. PLAIN ANIL",361.9],["CR0009","C.M. MIX SRI RAM",400.4],["CR0010","C.M. PLAIN ASOK",292.6],["CR0011","C.M. MULTI COLOUR IN1 SRI RAM",200.2],["CR0012","C.M. ECO.MULTI COLOUR SRIRAM",354.2],["CR0013","C.M. RED CHUN MUN",685.3],["CR0014","C.M. GREEN CHUN MUN",616.0],["CR0015","C.M. GREEN CHUN MUN",616.0],["CR0016","C.M. RED CHUN MUN-SHIV",685.3],["CR0017","CHORSA ROYAL",24640.0],["CR0018","GIANT SVA",29260.0],["CR0019","DELUXE PANDESH",6160.0],["CR0020","DELUXE MADHU-PANDESH",6930.0],["CR0021","X DELUXE MADHU-PANDESH",12320.0],["CR0022","DELUXE PANDESH",269.5],["CR0023","X AIR FIGHTER A.R.D.",32340.0],["CR0024","LAKSHMI SARNAVEL",15015.0],["CR0025","LAKSHMI MIX LABLE A.R.D.",16940.0],["CR0026","LAKSHMI DELUXE SARNAVEL",4466.0],["CR0027","LAKSHMI DELUXE ANIL",5929.0],["CR0028","LAKSHMI DURGESH",6930.0],["CR0029","GOLD LAKSHMI PRAVEEN",4466.0],["CR0030","DRAGON DELUXE A.R.D.",6468.0],["CR0031","2-SOUND CRACKERS INDIAN NATIONAL",5159.0],["CR0032","2-SOUND CRACKERS ROYAL",4081.0],["CR0033","3-SOUND CRACKERS JAI BHAVANI",6468.0],["CR0034","3-SOUND CRACKERS ROYAL",7700.0],["CR0035","RED BIJILI ROYAL",284.9],["CR0036","RED BIJILI A.R.D.",500.5],["CR0037","RED BIJILI PICS PRAVEEN-SIGNATURE",539.0],["CR0038","LAR SHIVRAM-ECON",277.2],["CR0039","LAR RAJUKANNA",346.5],["CR0040","LAR SHIVRAM-ECON",554.4],["CR0041","LAR RAJUKANNA",693.0],["CR0042","LAR SHIVRAM-ECON",1386.0],["CR0043","LAR RAJUKANNA",1732.5],["CR0044","LAR RAJUKANNA",3465.0],["CR0045","MARCHI BOMB MAHAKAL-ROHIT-",770.0],["CR0046","BOMB GUJARAT",1309.0],["CR0047","BOMB GUJARAT-GOLDEN DELUXE",1463.0],["CR0048","PLY TERMINATOR GREEN SRIRAM",924.0],["CR0049","PLY JOSH GREEN BOMB AYYAN",1925.0],["CR0050","NAZI GREEN CORO",2464.0],["CR0051","JUMBO MARSHAL BHAVIK",231.0],["CR0052","PLY ANDHI TOOFAN",338.8],["CR0053","HAND ROCKET",492.8],["CR0054","ROCKET BOMB ROYAL",924.0],["CR0055","COLOUR ROCKET AYYAN",1001.0],["CR0056","MUSICAL ROCKET RAVINDRA",200.2],["CR0057","LUNIK ROCKET AYYAN",1771.0],["CR0058","2-SOUND ROCKET MITHRA",1540.0],["CR0059","3-SOUND ROCKET BALAJI",2310.0],["CR0060","WHISTLING ROCKET RAJUKANNA",2464.0],["CR0061","MEGA ROCKET ROYAL",377.3],["CR0062","BIG SERPENT SONY",338.8],["CR0063","TWINKLING STAR A.R.D.",423.5],["CR0064","TWINKLING STAR SRIRAM-DELUXE",708.4],["CR0065","TWINKLING STAR SRIRAM-SHANDAR",1247.4],["CR0066","DELUXE PENCIL JAI BHAVANI",847.0],["CR0067","CM SILVER LIGHT",154.0],["CR0068","MUSICAL TORCH RAVINDRA",238.7],["CR0069","SEA-GREEN LASER RAJKALA",184.8],["CR0070","CANDY POP MERCURY",207.9],["CR0071","VANITHA TINY GUN",508.2],["CR0072","TOP GUN VANITHA",600.6],["CR0073","BULLET SONY",415.8],["CR0074","CHIKOO-BUNTY MIX SMOKE RAJKALA",284.9],["CR0075","RK-47 RAJKALA",323.4],["CR0076","GLOW STICK VANITHA",700.7],["CR0077","BO BO STICK VANITHA",954.8],["CR0078","YO YO STICK VANITHA",908.6],["CR0079","CRACKLING COCONUT RAJKALA",200.2],["CR0080","VANITHA TOP CODE",669.9],["CR0081","GUDIYA MINI PEARL",184.8],["CR0082","TM TIM TIM",215.6],["CR0083","GUDIYA IN",415.8],["CR0084","TM GOLDEN STAR",346.5],["CR0085","GUDIYA ASHARFI",385.0],["CR0086","GUDIYA JASMINE",385.0],["CR0087","TM DELUXE",646.8],["CR0088","GUDIYA GIFT PACK",831.6],["CR0089","BIG FLO.POTS STD",1832.6],["CR0090","BIG FLO.POTS ROYAL",1270.5],["CR0091","SPL. FLO.POTS ANIL",2541.0],["CR0092","SPL. FLO.POTS INDIAN NATIONAL",1771.0],["CR0093","ASOKA FLO.POTS ROYAL",2233.0],["CR0094","ASOKA FLO.POTS VANITHA",4620.0],["CR0095","DEL. FLO. POTS VANITHA",485.1],["CR0096","DEL.FLO.POTS ROYAL",238.7],["CR0097","COLOUR KOTHI RAJUKANNA",361.9],["CR0098","COLOUR KOTHI SONY-SUPER",716.1],["CR0099","COLOUR KOTHI VANITHA",746.9],["CR0100","COLOUR KOTHI DELUXE ROYAL",523.6],["CR0101","COLOUR KOTHI RAJUKANNA-SABSE BADA",854.7],["CR0102","TRI COLOUR FLO POTS RAJKALA-SHIN",184.8],["CR0103","TRI COLOUR FLO.POTS RAJKALA-CHOTTU",254.1],["CR0104","TRI COLOUR FLO POTS RAJKALA-DELUXE",423.5],["CR0105","PANCH KA PUNCH FOUNTAIN ROYAL",308.0],["CR0106","HELLO KITTY RAJKALA",400.4],["CR0107","GOOGLY MIX RAJKALA",223.3],["CR0108","MILKY BAR RAJKALA",562.1],["CR0109","FREEZER FOUNTAIN SONY",231.0],["CR0110","VOLCANO RAJKALA",400.4],["CR0111","INDIAN FANTASTIC TREE RAJKALA",539.0],["CR0112","HOT POTS AYYAN",377.3],["CR0113","NINJA CHAKKAR AYYAN",138.6],["CR0114","HOT POT DELUXE AYYAN",192.5],["CR0115","PARIS TOWER MIX RAJKALA",161.7],["CR0116","FOUNTAIN FANCY MANGO MIX 5X1 ROYAL",130.9],["CR0117","X MAS PICS RAJKALA",184.8],["CR0118","DM. ANIMAL-POGO SHOWER",409.64],["CR0119","JADE FLOWERS STD",361.9],["CR0120","VANITHA MINI POTS",423.5],["CR0121","PEACOCK DRAGON-DANCING RAJKALA",300.3],["CR0122","PEACOCK RAJKALA-COLOUR",338.8],["CR0123","PEACOCK ROYAL-MEGA",492.8],["CR0124","D. DINOSAUR",392.7],["CR0125","SIMBA BALAJI",808.5],["CR0126","BUNNY AYYAN",731.5],["CR0127","HALLOWEEN VANITHA",669.9],["CR0128","ELECTRIC SIREN CORO",331.1],["CR0129","ASOKA CHAKKAR A.R.D.",847.0],["CR0130","SPECIAL CHAKKAR ANIL",1309.0],["CR0131","SPECIAL CHAKKAR BALAJI ST",1309.0],["CR0132","DELUXE CHAKKAR VANITHA",3465.0],["CR0133","DELUXE CHAKKAR ROYAL-VIOLETTA",2233.0],["CR0134","DELUXE CHAKKAR INDIAN NATIONAL-",2002.0],["CR0135","DELUXE CHAKKAR ROYAL-FIDGET SPIINER",269.5],["CR0136","WHIZZ WHEEL ROYAL",154.0],["CR0137","WHIZZ WHEEL STD",192.5],["CR0138","TURBO WHEEL ROYAL",92.4],["CR0139","SWASTIK WHEEL STD",385.0],["CR0140","TIKI SPIN ROYAL",115.5],["CR0141","JOKE-GIANT WHEEL AYYAN",238.7],["CR0142","FLOWER WHEEL ROYAL",200.2],["CR0143","TOP SPINNER ROYAL",115.5],["CR0144","DUG OF WAR ROYAL",954.8],["CR0145","PHOTO FLASH ROYAL",77.0],["CR0146","MUSICAL MALA ANIL",554.4],["CR0147","CHIT PUT MITHRA-KIT KAT",308.0],["CR0148","POP CORN-TIK TAK ROYAL",847.0],["CR0149","C.C.B. VANITHA",238.7],["CR0150","VANITHA FUN RUN",177.1],["CR0151","HELICOPTER ROYAL",115.5],["CR0152","HELICOPTER RAJUKANNA",223.3],["CR0153","DRONE VANITHA",477.4],["CR0154","DRONES EYE ROYAL",223.3],["CR0155","PANCHA PANDAV AYYAN",192.5],["CR0156","JOLLY COLA PICS SARNAVEL",184.8],["CR0157","COLOUR COLLECTION RAJUKANNA",223.3],["CR0158","SHOTS ROYAL",308.0],["CR0159","RAJKALA GOLDEN FLY",231.0],["CR0160","PYRO PARK RAJUKANNA",107.8],["CR0161","COMET MIX FANTASTIC HI -5 ROYAL",523.6],["CR0162","D. AVENGERS",346.5],["CR0163","COMET MIX RIO/NIGEL AYYAN",700.7],["CR0164","VANITHA RISING EFFECT",1316.7],["CR0165","PICS FANCY BALAJI-SPACE X SERIES",323.4],["CR0166","PICS FANCY MIX ROYAL",446.6],["CR0167","PICS COMET MIX BALAJI-NEO SERIES",238.7],["CR0168","PICS COMET MIX ROYAL-FOOTBALL",308.0],["CR0169","PICS MIX AYYAN - REGULAR",354.2],["CR0170","EURO SERIES MIX SONY",485.1],["CR0171","FOOT BALL SERIES MIX SONY",569.8],["CR0172","INCH COMET MIX NSV-1 PICS",346.5],["CR0173","COMET MIX AYYAN",616.0],["CR0174","INCH COMET BALAJI-CITY JUMPER-",716.1],["CR0175","INCH COMET BALAJI-SUNRISE SERIES",885.5],["CR0176","COMET BALAJI-JUNGLE SERIES 3X1",1578.5],["CR0177","INCH ULTRA SERIES BALAJI",1578.5],["CR0178","SUPER HERO SERIES BALAJI",1617.0],["CR0179","EVER SHINE SERIES MIX SONY",947.1],["CR0180","JOLLDAY SERIES MIX SONY",1155.0],["CR0181","GREAT WALL SERIES MIX SONY",1262.8],["CR0182","PINK OUT VANITHA",2048.2],["CR0183","I WORLD VANITHA",2048.2],["CR0184","STAR AYYAN",207.9],["CR0185","STAR SONY MEGA SKY",238.7],["CR0186","STAR MIX ROYAL-POKER-RUMMY",308.0],["CR0187","SHOTS BALAJI",346.5],["CR0188","SHOTS ANIL-MIX COLOURS",577.5],["CR0189","SHOTS BALAJI-SINGAPORE",631.4],["CR0190","SHOTS AYYAN",924.0],["CR0191","SHOTS SONY-KING CROWN",1285.9],["CR0192","SHOTS BALAJI-DUBAI",1262.8],["CR0193","SHOTS PRAVEEN-PARTY FUN",1278.2],["CR0194","SHOTS BALAJI-CALL ME CRAZY",2079.0],["CR0195","SHOTS SEASON SONY",2579.5],["CR0196","SHOTS ANIL-COLOUR FUN UV BOX",3080.0],["CR0197","SHOTS BALAJI-MAX",2541.0],["CR0198","SHOTS AYYAN-MULTI COLOUR",3465.0],["CR0199","SHOTS K.S. PIRATES",3927.0],["CR0200","SHOTS BALAJI-MORNIG STAR",5005.0],["CR0201","HAND SHOTS",269.5],["CR0202","HAND SHOTS",462.0],["CR0203","HAND SHOTS",654.5],["CR0204","HAND SHOTS",1116.5],["CR0205","VAJRA HAND SHOTS",1386.0],["CR0206","POP POP BIG PICS NARINDER",169.4],["CR0207","POP POP PICS NARINDER",8.47],["CR0208","ONE SHOT BOMB MERCURY",12.32],["CR0209","SKY KING VANITHA",1963.5],["CR0210","GOLDEN SKY VANITHA",1963.5]];
+let P=RAW.map(([id,name,price])=>({id,name,price}));
+const $=i=>document.getElementById(i);
+const money=v=>"₹"+Number(v).toLocaleString("en-IN",{minimumFractionDigits:Number.isInteger(v)?0:2,maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=s=>s.replace(/^cr/i,"").replace(/^0+/,"");
+let res=[],act=0,cur=0;
+function search(q){q=q.trim().toLowerCase();if(!q)return[];
+ const ws=q.split(/\s+/);const digits=/^(cr)?\d+$/.test(q);
+ let r=P.filter(p=>{const h=(p.id+" "+p.name).toLowerCase();return ws.every(w=>h.includes(w))||(digits&&p.id.slice(2).replace(/^0+/,"")===num(q))});
+ const exact=r.findIndex(p=>p.id.toLowerCase()===q||(digits&&p.id.slice(2).replace(/^0+/,"")===num(q)));
+ if(exact>0)r.unshift(r.splice(exact,1)[0]);return r}
+function suggest(){const q=$("q").value;$("x").classList.toggle("on",!!q);res=search(q);act=0;const s=$("sug");
+ if(!q.trim()){s.classList.remove("on");$("hint").hidden=false;return}
+ $("hint").hidden=true;s.classList.add("on");
+ s.innerHTML=res.length?res.slice(0,6).map((p,i)=>`<button data-i="${i}" class="${i?"":"act"}" role="option"><small>${p.id}</small><span>${esc(p.name)}</span><em>${money(p.price)}</em></button>`).join("")+(res.length>6?`<div class="none">+${res.length-6} more / વધુ · Enter દબાવો · press Enter</div>`:""):`<div class="none">No item found · આઈટમ મળી નથી<br>Check the ID · ID ફરી તપાસો</div>`}
+function show(i){cur=i;const p=res[i];if(!p)return;const f=INFO[p.id]||{};
+ qty=cart[p.id]||1;buy();$("dId").textContent="ITEM "+p.id;$("dName").textContent=p.name;$("dPrice").textContent=money(p.price);
+ $("dDesc").textContent=f.desc||p.name;
+ $("pos").textContent=res.length>1?(i+1)+" / "+res.length:"";$("prev").hidden=$("next").hidden=res.length<2;
+ media(p,f);
+ if(!$("dlg").open)$("dlg").showModal();$("sug").classList.remove("on");pstart();
+ try{history.replaceState(null,"","?id="+p.id)}catch(e){}}
+const step=d=>{if(res.length>1)show((cur+d+res.length)%res.length)};
+function toast(m){const h=$("dlg").open?$("dlg"):$("ldlg").open?$("ldlg"):document.body;if($("toast").parentNode!==h)h.appendChild($("toast"));$("toast").textContent=m;$("toast").classList.add("on");setTimeout(()=>$("toast").classList.remove("on"),1600)}
+$("q").addEventListener("input",suggest);
+$("q").addEventListener("focus",()=>{if($("q").value.trim())suggest()});
+$("q").addEventListener("keydown",e=>{const n=Math.min(res.length,6);
+ if(e.key==="ArrowDown"&&n){e.preventDefault();act=(act+1)%n}else if(e.key==="ArrowUp"&&n){e.preventDefault();act=(act-1+n)%n}
+ else if(e.key==="Enter"){e.preventDefault();if(res.length)show(act);else suggest();return}else return;
+ [...$("sug").querySelectorAll("button")].forEach((b,i)=>b.classList.toggle("act",i===act))});
+$("sug").addEventListener("click",e=>{const b=e.target.closest("[data-i]");if(b)show(+b.dataset.i)});
+$("x").onclick=()=>{$("q").value="";suggest();$("q").focus()};
+document.addEventListener("click",e=>{if(!e.target.closest(".box"))$("sug").classList.remove("on")});
+$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);$("close").onclick=()=>$("dlg").close();
+$("dlg").addEventListener("click",e=>{if(e.target===$("dlg"))$("dlg").close()});
+$("dlg").addEventListener("keydown",e=>{if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
+$("dlg").addEventListener("close",()=>{try{history.replaceState(null,"",location.pathname)}catch(e){}$("q").select();if(matchMedia("(hover:hover)").matches)$("q").focus()});
+$("copy").onclick=async()=>{try{await navigator.clipboard.writeText(res[cur].id);toast("ID copied · ID કૉપિ થયું")}catch(e){toast(res[cur].id)}};
+$("share").onclick=async()=>{const p=res[cur],u=location.href.split("?")[0]+"?id="+p.id,t=p.name+" ("+p.id+") · "+money(p.price);
+ try{if(navigator.share)await navigator.share({title:p.name,text:t,url:u});else{await navigator.clipboard.writeText(t+"\n"+u);toast("Copied · કૉપિ થયું")}}catch(e){}};
+/* ---------- My list (cart) ---------- */
+const WA="919726153334";
+let cart={},qty=1;
+try{cart=JSON.parse(localStorage.getItem("ff_cart")||"{}")}catch(e){}
+const keep=()=>{try{localStorage.setItem("ff_cart",JSON.stringify(cart))}catch(e){}};
+const find=id=>P.find(p=>p.id===id);
+const ids=()=>Object.keys(cart).filter(find);
+const count=()=>ids().reduce((a,i)=>a+cart[i],0);
+const total=()=>ids().reduce((a,i)=>a+find(i).price*cart[i],0);
+function buy(){const p=res[cur];if(!p)return;$("qn").textContent=qty;
+ $("addBtn").innerHTML=(cart[p.id]?"Update list":"Add to list")+" · "+money(p.price*qty)+'<span class="gu" lang="gu" style="color:inherit;opacity:.85">'+(cart[p.id]?"યાદી બદલો":"યાદીમાં ઉમેરો")+"</span>"}
+function pill(){const n=count(),b=$("pill");b.classList.toggle("on",n>0);document.body.classList.toggle("hascart",n>0);
+ b.textContent="🧾 My list · મારી યાદી ("+n+") · "+money(total())}
+function lines(){return ids().map((id,i)=>{const p=find(id);return (i+1)+". "+p.name+" ("+id+") × "+cart[id]+" = "+money(p.price*cart[id])}).join("\n")}
+function lmsg(){return "Friends Fireworks – my list\n"+lines()+"\nTotal: "+money(total())}
+function drawList(){const a=ids();
+ $("lItems").innerHTML=a.length?a.map(id=>{const p=find(id),n=cart[id];return `<div class="li"><div class="lt"><b>${esc(p.name)}</b><small>${id} · ${money(p.price)}</small></div><div class="step sm"><button data-d="-1" data-id="${id}" aria-label="Less">−</button><span>${n}</span><button data-d="1" data-id="${id}" aria-label="More">+</button></div><div class="lp">${money(p.price*n)}</div></div>`}).join(""):'<div class="lempty">Your list is empty · યાદી ખાલી છે</div>';
+ $("lTotal").textContent=money(total());$("lBtns").hidden=!a.length}
+$("qm").onclick=()=>{if(qty>1){qty--;buy()}};$("qp").onclick=()=>{if(qty<999){qty++;buy()}};
+$("addBtn").onclick=()=>{const p=res[cur];cart[p.id]=qty;keep();pill();$("dlg").close();toast("Added to list · યાદીમાં ઉમેર્યું");burst(innerWidth/2,innerHeight-70,60)};
+$("pill").onclick=()=>{drawList();$("ldlg").showModal()};
+$("lItems").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;const id=b.dataset.id,n=(cart[id]||0)+ +b.dataset.d;
+ if(n<=0)delete cart[id];else cart[id]=Math.min(n,999);keep();pill();drawList()});
+$("lclose").onclick=()=>$("ldlg").close();
+$("ldlg").addEventListener("click",e=>{if(e.target===$("ldlg"))$("ldlg").close()});
+$("lclear").onclick=()=>{cart={};keep();pill();drawList()};
+$("lcopy").onclick=async()=>{try{await navigator.clipboard.writeText(lmsg());toast("List copied · યાદી કૉપિ થઈ")}catch(e){toast("Could not copy")}};
+$("wa").onclick=()=>window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lmsg()),"_blank","noopener");
+
+/* ---------- Fireworks ---------- */
+const cv=$("fx"),cx=cv.getContext("2d"),still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let W=0,H=0,parts=[],raf=0;
+const COLS=[[255,190,70],[240,70,55],[255,130,40],[255,215,150],[235,90,150]];
+function fit(){const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+addEventListener("resize",fit);fit();
+function burst(x,y,n=44){if(still)return;const a=COLS[Math.random()*5|0],b=COLS[Math.random()*5|0];
+ for(let i=0;i<n;i++){const t=Math.PI*2*i/n+Math.random()*.25,s=1.4+Math.random()*3.4;parts.push({x,y,vx:Math.cos(t)*s,vy:Math.sin(t)*s,l:1,c:i%2?a:b})}
+ if(parts.length>700)parts.splice(0,parts.length-700);if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){cx.clearRect(0,0,W,H);parts=parts.filter(p=>p.l>0);
+ for(const p of parts){p.x+=p.vx;p.y+=p.vy;p.vx*=.97;p.vy=p.vy*.97+.045;p.l-=.013;
+  cx.fillStyle="rgba("+p.c+","+Math.max(p.l,0)*.9+")";cx.beginPath();cx.arc(p.x,p.y,2,0,7);cx.fill()}
+ raf=parts.length?requestAnimationFrame(tick):0}
+document.addEventListener("pointerdown",e=>{if(!e.target.closest("input,dialog,.pill,button,a,.sug"))burst(e.clientX,e.clientY)});
+setTimeout(()=>burst(W*.5,H*.22,50),500);
+setInterval(()=>{if(!document.hidden&&!$("dlg").open&&!$("ldlg").open)burst(W*(.12+Math.random()*.76),H*(.1+Math.random()*.3),34)},4200);
+pill();
+/* ---------- Effect preview on the card ---------- */
+const pc=$("pv"),px=pc.getContext("2d"),rnd=Math.random;
+let pp=[],pe=[],pf=0,ring=null,praf=0,PW=0,PH=0,ptm=0;
+$("pvw").hidden=still;
+const KINDS=[["rocket",/ROCKET|HELICOPTER|DRONE/],["wheel",/CHAKKAR|WHEEL|SPIN|TIKI|NINJA/],["fountain",/POT|KOTHI|FOUNTAIN|VOLCANO|TREE|PEACOCK|JADE/],
+["sparkler",/TWINKLING|PENCIL|SILVER LIGHT|TORCH|CANDY|LASER|STICK|CRACKLING|CAPS/],["bomb",/BOMB|CRACKERS|BIJILI|LAKSHMI|CHORSA|DRAGON|MARSHAL|TOOFAN|TERMINATOR|NAZI/]];
+const kindOf=n=>(KINDS.find(k=>k[1].test(n))||["shell"])[0];
+const TINTS=[[/GREEN/,[90,235,130]],[/RED/,[255,75,65]],[/BLUE/,[95,155,255]],[/PINK|ROSE/,[255,125,185]],[/GOLD|YELLOW/,[255,205,80]],[/SILVER|WHITE/,[235,240,255]]];
+const pal=n=>{const t=TINTS.find(x=>x[0].test(n));return t?[t[1],[255,230,170]]:[COLS[rnd()*5|0],COLS[rnd()*5|0]]};
+function pfit(){const r=pc.getBoundingClientRect(),d=devicePixelRatio||1;PW=r.width||300;PH=r.height||160;pc.width=PW*d;pc.height=PH*d;px.setTransform(d,0,0,d,0,0)}
+const sp=(x,y,vx,vy,l,c,g=.05,f=.02)=>pp.push({x,y,vx,vy,l,c,g,f});
+function shell(x,y,n,c){for(let i=0;i<n;i++){const a=Math.PI*2*i/n+rnd()*.2,s=1+rnd()*2.6;sp(x,y,Math.cos(a)*s,Math.sin(a)*s,1,c[i%2],.035,.016)}}
+/* ---------- Synthesised sound (no audio files needed) ---------- */
+let ac=null,rev=null,master=null,nbuf=null,sbus=null,mute=false;
+try{mute=localStorage.getItem("ff_mute")==="1"}catch(e){}
+function audio(){if(!ac){try{ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.75;
+  const c=ac.createDynamicsCompressor();master.connect(c);c.connect(ac.destination);
+  rev=ac.createConvolver();const L=ac.sampleRate*1.8|0,ib=ac.createBuffer(2,L,ac.sampleRate);
+  for(let ch=0;ch<2;ch++){const d=ib.getChannelData(ch);for(let i=0;i<L;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/L,3)}
+  rev.buffer=ib;const w=ac.createGain();w.gain.value=.45;rev.connect(w);w.connect(master);
+  nbuf=ac.createBuffer(1,ac.sampleRate*3,ac.sampleRate);const d=nbuf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}catch(e){ac=null;return null}}
+ if(ac.state==="suspended")ac.resume();return ac}
+["pointerdown","keydown","touchend"].forEach(ev=>addEventListener(ev,audio,{passive:true}));
+function stopSound(){if(sbus&&ac){sbus.gain.cancelScheduledValues(ac.currentTime);sbus.gain.setTargetAtTime(0,ac.currentTime,.03)}sbus=null}
+function newBus(){stopSound();sbus=ac.createGain();sbus.connect(master);const s=ac.createGain();s.gain.value=.55;sbus.connect(s);s.connect(rev);return sbus}
+function noise(b,t,dur,o={}){const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain(),v=o.g==null?.5:o.g,a=o.att||.004;
+ s.buffer=nbuf;f.type=o.type||"lowpass";f.frequency.setValueAtTime(o.f||1000,t);if(o.f2)f.frequency.exponentialRampToValueAtTime(o.f2,t+dur);f.Q.value=o.q||1;
+ g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+a);if(o.hold){g.gain.setValueAtTime(v,t+dur*o.hold)}g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+ s.connect(f);f.connect(g);g.connect(b);s.start(t,Math.random()*.5);s.stop(t+dur+.05)}
+function tone(b,t,f1,f2,dur,v){const o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(f1,t);o.frequency.exponentialRampToValueAtTime(f2,t+dur);
+ g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(b);o.start(t);o.stop(t+dur+.05)}
+function crackle(b,t,n,span){for(let i=0;i<n;i++)noise(b,t+rnd()*span,.02+rnd()*.025,{type:"highpass",f:3500+rnd()*4000,g:.1+rnd()*.3,att:.0008})}
+function whistle(b,t,d){const o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.setValueAtTime(650,t);o.frequency.exponentialRampToValueAtTime(2300,t+d);
+ g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.09,t+.06);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(b);o.start(t);o.stop(t+d+.05);
+ noise(b,t,d,{type:"bandpass",f:1200,f2:4500,q:2,g:.22,att:d*.6})}
+/* real shells are noise, not a pitched drum: sharp crack + low rumble + echo */
+function boom(b,t,s=1){const v=rnd();
+ noise(b,t,.14,{type:"bandpass",f:3200+v*800,f2:700,q:.6,g:1,att:.001});
+ noise(b,t+.01,1.1*s,{f:650+v*150,f2:80,g:.85,att:.006});
+ noise(b,t+.03,1.7*s,{f:260,f2:50,g:.55,att:.03});
+ crackle(b,t+.18,34,1.4)}
+function bang(b,t){noise(b,t,.09,{type:"bandpass",f:4500,f2:1500,q:.5,g:1,att:.0005});
+ noise(b,t+.005,.4,{f:1400,f2:180,g:.6,att:.002});
+ noise(b,t+.02,.9,{f:400,f2:70,g:.35,att:.01})}
+const SND={
+ rocket:(b,t)=>whistle(b,t,.5),
+ fountain:(b,t)=>{noise(b,t,1.9,{type:"highpass",f:2200,q:.5,g:.28,att:.15,hold:.7});noise(b,t,1.9,{type:"bandpass",f:900,q:.8,g:.12,att:.2,hold:.7});crackle(b,t+.1,30,1.7)},
+ wheel:(b,t)=>{noise(b,t,2.3,{type:"bandpass",f:900,f2:2400,q:3,g:.3,att:.3,hold:.6});noise(b,t,2.3,{type:"highpass",f:3000,g:.12,att:.2,hold:.7});crackle(b,t,55,2.2)},
+ sparkler:(b,t)=>{noise(b,t,2.1,{type:"highpass",f:4200,g:.1,att:.1,hold:.8});crackle(b,t,60,2)},
+ bomb:(b,t)=>bang(b,t),
+ shell:(b,t)=>boom(b,t)};
+function sndIcon(){$("snd").textContent=mute?"🔇":"🔊"}
+sndIcon();
+$("snd").onclick=()=>{mute=!mute;try{localStorage.setItem("ff_mute",mute?"1":"0")}catch(e){}sndIcon();if(mute)stopSound();else if(res[cur])play(kindOf(res[cur].name))};
+function play(kind,x,y){if(still)return;const nm=res[cur]?res[cur].name:"",c=pal(nm),cx0=x==null?PW/2:x,cy0=y==null?PH*.45:y;let n=0;
+ const A=!mute&&audio(),bus=A?newBus():null;if(!A)stopSound();const T=A?A.currentTime+.02:0;
+ if(bus&&SND[kind]&&kind!=="shell")SND[kind](bus,T);
+ if(kind==="rocket"){let ry=PH;pe.push(()=>{ry-=4.2;sp(cx0+rnd()-.5,ry,(rnd()-.5)*.4,.8,.6,[255,200,120],0,.05);if(ry<PH*.32){if(bus)boom(bus,ac.currentTime+.01);shell(cx0,ry,80,c);shell(cx0,ry,30,[[255,255,255],c[0]]);return false}return true})}
+ else if(kind==="fountain"){pe.push(()=>{for(let i=0;i<4;i++)sp(cx0,PH-4,(rnd()-.5)*1.7,-(4+rnd()*2.6),1,c[i%2],.09,.014);return ++n<110})}
+ else if(kind==="wheel"){let a=0;pe.push(()=>{a+=.38;for(let k=0;k<3;k++){const g=a+k*2.094;sp(PW/2+Math.cos(g)*16,PH/2+Math.sin(g)*16,Math.cos(g+1.2)*2.8,Math.sin(g+1.2)*2.8,.9,c[k%2],.02,.03)}return ++n<140})}
+ else if(kind==="sparkler"){pe.push(()=>{for(let i=0;i<5;i++)sp(cx0+rnd()*4-2,cy0+rnd()*4-2,(rnd()-.5)*4,(rnd()-.5)*4,.8,[255,225,150],.04,.05);return ++n<130})}
+ else if(kind==="bomb"){pf=1;ring={x:cx0,y:cy0,r:4,l:1};shell(cx0,cy0,36,[[255,160,60],[255,240,200]])}
+ else{if(bus)boom(bus,T);shell(cx0,cy0,70,c)}
+ if(!praf)praf=requestAnimationFrame(ptick)}
+function ptick(){px.clearRect(0,0,PW,PH);pe=pe.filter(f=>f());pp=pp.filter(p=>p.l>0);
+ if(pf>0){px.globalCompositeOperation="source-over";px.fillStyle="rgba(255,255,255,"+pf*.5+")";px.fillRect(0,0,PW,PH);pf-=.07}
+ if(ring){ring.r+=5;ring.l-=.045;if(ring.l<=0)ring=null;else{px.globalCompositeOperation="lighter";px.strokeStyle="rgba(255,210,140,"+ring.l+")";px.lineWidth=2;px.beginPath();px.arc(ring.x,ring.y,ring.r,0,7);px.stroke()}}
+ px.globalCompositeOperation="lighter";
+ for(const p of pp){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.985;p.l-=p.f;px.fillStyle="rgba("+p.c+","+Math.max(p.l,0)+")";px.beginPath();px.arc(p.x,p.y,1.7,0,7);px.fill()}
+ praf=(pp.length||pe.length||pf>0||ring)?requestAnimationFrame(ptick):0}
+function pstart(){stopSound();pp=[];pe=[];pf=0;ring=null;clearTimeout(ptm);pfit();ptm=setTimeout(()=>play(kindOf(res[cur].name)),220)}
+pc.addEventListener("pointerdown",e=>{const r=pc.getBoundingClientRect();play(kindOf(res[cur].name),e.clientX-r.left,e.clientY-r.top)});
+$("dlg").addEventListener("close",()=>{stopSound();clearTimeout(ptm);pp=[];pe=[];ring=null;pf=0});
+/* swipe left/right on the card to move between results */
+let sx=0,sy=0;
+$("dlg").addEventListener("touchstart",e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+$("dlg").addEventListener("touchend",e=>{const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>70&&Math.abs(dy)<50)step(dx<0?1:-1)},{passive:true});
+/* ---------- Cracker effect inside the title and price text (hover or tap) ---------- */
+function tsound(){if(mute||!audio())return;const g=ac.createGain(),t=ac.currentTime+.01;g.gain.value=.8;g.connect(master);
+ crackle(g,t,14,.55);noise(g,t,.05,{type:"bandpass",f:3500,q:1,g:.5,att:.0008})}
+function crack(el){if(still)return;const n=performance.now();if(el._t&&n-el._t<900)return;el._t=n;
+ el.classList.remove("fx");void el.offsetWidth;el.classList.add("fx");tsound()}
+[$("dName"),$("dPrice")].forEach(el=>{el.addEventListener("pointerenter",()=>crack(el));el.addEventListener("click",()=>crack(el));el.addEventListener("animationend",()=>el.classList.remove("fx"))});
+/* ---------- Photo + video on the card ---------- */
+/* Photo: photos/<ID>.jpg (e.g. photos/CR0045.jpg) or the Photo column. Video: YouTube link or .mp4 in the Video column. */
+const NOPH="Photo coming soon · ફોટો જલ્દી આવશે",NOVD="Video coming soon · વિડિયો જલ્દી આવશે";
+const ytId=u=>{const m=String(u).match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/|live\/)([\w-]{11})/);return m?m[1]:/^[\w-]{11}$/.test(u)?u:null};
+function media(p,f){const di=$("dImg"),dv=$("dVid");di.textContent=NOPH;
+ const im=new Image();im.alt=p.name;im.decoding="async";im.onload=()=>{if(res[cur]===p)di.replaceChildren(im)};im.src=f.img||"photos/"+p.id+".jpg";
+ const v=f.vid,y=v&&ytId(v);
+ if(y){dv.innerHTML='<button class="yt" aria-label="Play video · વિડિયો ચલાવો" style="background-image:url(https://i.ytimg.com/vi/'+y+'/hqdefault.jpg)"><span>▶</span></button>';
+  dv.firstChild.onclick=()=>{dv.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>'}}
+ else if(v)dv.innerHTML='<video src="'+esc(v)+'" controls preload="metadata" playsinline></video>';
+ else dv.textContent=NOVD}
+$("dlg").addEventListener("close",()=>{$("dVid").textContent=""});
+/* ---------- Shop location lock (only works inside the shop) ---------- */
+const bi=(e,g)=>e+'<span class="gu" lang="gu">'+g+"</span>";
+const SETUP=new URLSearchParams(location.search).has("setup"),PASS_MIN=20;
+let ready=false,okay=false,wantDone=false;
+const fresh=()=>{try{return Date.now()-(+sessionStorage.getItem("ff_pass")||0)<PASS_MIN*60000}catch(e){return false}};
+const dist=(a,b,c,d)=>{const R=6371000,r=Math.PI/180,x=(c-a)*r,y=(d-b)*r,h=Math.sin(x/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin(y/2)**2;return 2*R*Math.asin(Math.sqrt(h))};
+function gate(t,p,b1,f1,b2,f2){const g=$("gate");g.classList.add("on");if(document.activeElement)document.activeElement.blur();
+ $("gT").innerHTML=t;$("gP").innerHTML=p;
+ [["gBtn",b1,f1],["gBtn2",b2,f2]].forEach(([id,h,f])=>{const b=$(id);b.hidden=!h;b.innerHTML=h||"";b.onclick=f||null})}
+const AGAIN=bi("Try again","ફરી પ્રયાસ કરો");
+function openWant(){if(!ready||!okay||wantDone)return;wantDone=true;
+ const want=new URLSearchParams(location.search).get("id");
+ if(want){$("q").value=want;res=search(want);if(res.length)show(0)}else if($("q").value.trim())suggest()}
+function unlock(){okay=true;try{sessionStorage.setItem("ff_pass",Date.now())}catch(e){}$("gate").classList.remove("on");openWant()}
+function startCheck(){
+ gate(bi("Checking you’re in the shop…","દુકાનમાં છો તે તપાસી રહ્યા છીએ…"),bi("Please allow location when asked.","પૂછવામાં આવે ત્યારે લોકેશનની મંજૂરી આપો."));
+ if(!navigator.geolocation){gate(bi("Location not supported","લોકેશન સપોર્ટ નથી"),bi("Please open this page in Chrome or Safari.","કૃપા કરીને Chrome અથવા Safari માં ખોલો."));return}
+ navigator.geolocation.getCurrentPosition(p=>{const ac=p.coords.accuracy,d=dist(p.coords.latitude,p.coords.longitude,SHOP.lat,SHOP.lng);
+  if(ac>500)gate(bi("Location not precise enough","લોકેશન પૂરતું સચોટ નથી"),bi("Turn on GPS / precise location and try again.","GPS ચાલુ કરીને ફરી પ્રયાસ કરો."),AGAIN,startCheck);
+  else if(d-Math.min(ac,100)<=SHOP.radius)unlock();
+  else gate(bi("This catalogue works inside the shop","આ કેટલોગ ફક્ત દુકાનની અંદર ચાલે છે"),bi("You seem to be about "+Math.round(d)+" m away.","તમે દુકાનથી લગભગ "+Math.round(d)+" મીટર દૂર છો."),AGAIN,startCheck)},
+  e=>e.code===1?gate(bi("Location permission needed","લોકેશનની મંજૂરી જરૂરી છે"),bi("Allow location for this site in your browser settings, then try again.","બ્રાઉઝર સેટિંગમાં આ સાઇટ માટે લોકેશન ચાલુ કરો, પછી ફરી પ્રયાસ કરો."),AGAIN,startCheck)
+   :gate(bi("Couldn’t get your location","લોકેશન મળ્યું નથી"),bi("Move near a window, make sure GPS is on, and try again.","બારી પાસે જાઓ, GPS ચાલુ છે તે ચકાસો અને ફરી પ્રયાસ કરો."),AGAIN,startCheck),
+  {enableHighAccuracy:true,timeout:15000,maximumAge:0})}
+function setup(){
+ gate("Set shop location","Stand at your shop counter and tap the button. It reads your position for about 12 seconds.","Use my location now",()=>{
+  if(!navigator.geolocation){gate("Location not supported","Open this page in Chrome or Safari.");return}
+  let best=null;gate("Reading location…","Keep the phone still.");
+  const w=navigator.geolocation.watchPosition(p=>{if(!best||p.coords.accuracy<best.coords.accuracy)best=p;$("gP").textContent="Keep the phone still. Accuracy so far: ±"+Math.round(best.coords.accuracy)+" m"},
+   e=>{navigator.geolocation.clearWatch(w);gate("Couldn’t read location","Allow location for this site, then try again.","Try again",setup)},{enableHighAccuracy:true,timeout:15000,maximumAge:0});
+  setTimeout(()=>{navigator.geolocation.clearWatch(w);if(!best)return;const c=best.coords,line="const SHOP={lat:"+c.latitude.toFixed(6)+",lng:"+c.longitude.toFixed(6)+",radius:60};";
+   gate("Shop location saved below","Accuracy ±"+Math.round(c.accuracy)+" m."+(c.accuracy>30?" That is rough. Move near a window or outside and measure again.":" Good.")+"<br>Paste this line into the page code (replace <b>const SHOP=null;</b>):<br><br><code>"+line+"</code>","Copy line",async()=>{try{await navigator.clipboard.writeText(line);$("gBtn").textContent="Copied ✓"}catch(e){}},"Measure again",setup)},12500)})}
+if(SETUP)setup();
+else if(!SHOP||fresh()){okay=true;$("gate").classList.remove("on")}
+else startCheck();
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&SHOP&&!SETUP&&!fresh()&&!$("gate").classList.contains("on")){okay=false;if($("dlg").open)$("dlg").close();if($("ldlg").open)$("ldlg").close();startCheck()}});
+function parseCSV(s){const rows=[];let r=[],f="",q=false;s=s.replace(/^\uFEFF/,"");
+ for(let i=0;i<s.length;i++){const c=s[i];
+  if(q){if(c=='"'){if(s[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c=='"')q=true;else if(c==","){r.push(f);f=""}
+  else if(c=="\n"||c=="\r"){if(c=="\r"&&s[i+1]=="\n")i++;r.push(f);f="";if(r.some(x=>x.trim()))rows.push(r);r=[]}
+  else f+=c}
+ r.push(f);if(r.some(x=>x.trim()))rows.push(r);return rows}
+async function loadPrices(){
+ try{const res=await fetch(PRICE_SOURCE,{cache:"no-store"});if(!res.ok)throw 0;
+  const rows=parseCSV(await res.text()),h=rows.shift().map(x=>x.trim().toLowerCase());
+  const ix=n=>h.indexOf(n),iI=ix("id"),iN=ix("name"),iP=ix("price"),iD=ix("description"),iF=ix("photo"),iV=ix("video");
+  if(iI<0||iP<0)throw 0;const list=[],info={};
+  rows.forEach(r=>{const id=(r[iI]||"").trim().toUpperCase(),price=parseFloat((r[iP]||"").replace(/[₹,\s]/g,""));
+   if(!id||isNaN(price))return;const name=((iN>=0&&r[iN])||id).trim();list.push({id,name,price});
+   const d=iD>=0?(r[iD]||"").trim():"",f=iF>=0?(r[iF]||"").trim():"",v=iV>=0?(r[iV]||"").trim():"";
+   if(d||f||v)info[id]={desc:d,img:f,vid:v}});
+  if(list.length){P=list;INFO=info}}catch(e){}}
+(async()=>{await loadPrices();ready=true;openWant()})();
+</script></body></html>
